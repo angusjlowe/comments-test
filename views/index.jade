@@ -1,0 +1,12 @@
+extends layout
+
+block content
+  h1= title
+  p Welcome to #{title}
+  ul
+    each comment in commentslist
+      li= comment.content 
+      
+  form#formAddComment(name="addComment", method="post",action="/addComment")
+    input#inputComment(type="text", placeholder="Write comment", name="comment")
+    button#btnSubmit(type="submit") submit
